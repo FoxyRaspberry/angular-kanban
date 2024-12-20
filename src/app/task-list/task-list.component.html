@@ -1,0 +1,9 @@
+@for (task of list; track task.taskID) {
+    <li> 
+        {{task.taskName}} 
+        <p>{{task.taskDescription}}</p>
+    </li>
+    
+} @empty {
+    There are no items.
+}

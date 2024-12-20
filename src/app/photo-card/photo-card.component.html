@@ -1,4 +1,4 @@
-@if (imgSrc) {
+@if (imgSource | async; as imgSrc) {
   <div class="app-photo-card">
     <img class="app-photo-card-img" [src]="imgSrc" alt="dog">
   </div>

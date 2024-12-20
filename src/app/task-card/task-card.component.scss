@@ -6,3 +6,25 @@
     border: 2px solid #2b0747;
     padding: 10px;
 }
+
+.app-task-status {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.app-task-status_to-do {
+    border: 3px solid #e30a48;
+}
+
+.app-task-status_in-progress {
+    border: 3px solid #d2af13;
+}
+
+.app-task-status_in-review {
+    border: 3px solid #0960e1;
+}
+
+.app-task-status_done {
+    border: 3px solid #09e10d;
+}

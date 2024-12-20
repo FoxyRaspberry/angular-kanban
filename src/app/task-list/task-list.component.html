@@ -1,9 +1,11 @@
+<ul class="app-list-container">
 @for (task of list; track task.taskID) {
     <li> 
-        {{task.taskName}} 
-        <p>{{task.taskDescription}}</p>
+        <app-task-card [task] = "task" />
     </li>
     
 } @empty {
     There are no items.
 }
+</ul>
+

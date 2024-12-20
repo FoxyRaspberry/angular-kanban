@@ -1,11 +1,47 @@
-<ul class="app-list-container">
-@for (task of list; track task.taskID) {
-    <li> 
-        <app-task-card [task] = "task" />
-    </li>
-    
-} @empty {
-    There are no items.
-}
-</ul>
+<app-board-column [title]="'To do'">
+    <ul class="app-list-container">
+        @for (task of toDoList; track task.taskID) {
+            <li> 
+                <app-task-card [task]="task" />
+            </li>
+        } @empty {
+            There are no items.
+        }
+    </ul>
+</app-board-column>
 
+<app-board-column [title]="'In progress'">
+    <ul class="app-list-container">
+        @for (task of inProgressList; track task.taskID) {
+            <li> 
+                <app-task-card [task]="task" />
+            </li>
+        } @empty {
+            There are no items.
+        }
+    </ul>
+</app-board-column>
+
+<app-board-column [title]="'In review'">
+    <ul class="app-list-container">
+        @for (task of inReviewList; track task.taskID) {
+            <li> 
+                <app-task-card [task]="task" />
+            </li>
+        } @empty {
+            There are no items.
+        }
+    </ul>
+</app-board-column>
+
+<app-board-column [title]="'Done'">
+    <ul class="app-list-container">
+        @for (task of doneList; track task.taskID) {
+            <li> 
+                <app-task-card [task]="task" />
+            </li>
+        } @empty {
+            There are no items.
+        }
+    </ul>
+</app-board-column>

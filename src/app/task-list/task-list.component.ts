@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { KanbanTask, TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-task-list',
@@ -7,28 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss'
 })
-export class TaskListComponent {
-  list: KanbanTask[] = [
-    {
-      taskDescription: 'Создать компонент с помощью `ng generate component`',
-      taskID: 'NGKANBAN-1',
-      taskName: 'создать компонент',
-    },
-    {
-      taskDescription: 'Создать компонент с помощью `ng generate service`',
-      taskID: 'NGKANBAN-2',
-      taskName: 'создать сервис',
-    },
-    {
-      taskDescription: 'Создать компонент с помощью `ng generate component`',
-      taskID: 'NGKANBAN-3',
-      taskName: 'создать компонент карточки',
-    }, 
-  ]
-}
+export class TaskListComponent implements OnInit {
+  list: KanbanTask[] = [];
 
-interface KanbanTask {
-  taskDescription: string;
-  taskID: string; 
-  taskName: string;
+  constructor(private readonly tasksService: TasksService) {}
+
+  ngOnInit(): void {
+    this.list = this.tasksService.readList();
+  }
 }
